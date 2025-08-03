@@ -1,14 +1,15 @@
 import { useState, useEffect } from "react";
 import { EyeIcon, EyeSlashIcon } from "@heroicons/react/16/solid";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Button1 from "./Button1";
 import Input1 from "./Input1";
 import ErrorMessage from "./ErrorMessage";
 import ModeToggle from "./ModeToggle";
-import Link1 from "./Link1";
+import Link2 from "./Link2";
+import Logo from "./Logo";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
+
   const [formValues, setFormValues] = useState({
     insurance: "",
     firstname: "",
@@ -64,29 +65,12 @@ const LoginForm = () => {
     password: false,
   });
 
-  const [formFocused, setFormFocused] = useState({
-    insurance: false,
-    firstname: false,
-    lastname: false,
-    phone: false,
-    gender: false,
-    birthdate: false,
-    email: false,
-    password: false,
-  });
   const patterns = {
     firstname: "^[A-Za-zآ-ی]+$",
     lastname: "^[A-Za-zآ-ی]+$",
     phone: "^09[0-9]{9}$",
     email: "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}$",
     password: "^(?=.*[a-z])(?=.*[A-Z])(?=.*d)(?=.*[^a-zA-Z0-9]).{8,}$",
-  };
-  const handleFocus = (e) => {
-    const { name } = e.target;
-    setFormFocused((prev) => ({
-      ...prev,
-      [name]: true,
-    }));
   };
 
   const handleChange = (e) => {
@@ -186,6 +170,9 @@ const LoginForm = () => {
   }, []);
   return (
     <div>
+      <div className="flex flex-row justify-center mb-3">
+        <Logo width={"150px"} height={"75px"} />
+      </div>
       <form className="flex flex-col justify-center items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black w-full max-w-md text-right transition-all duration-200 ease-in-out mx-auto my-auto">
         <h1 className="text-3xl text-darkBlue dark:text-lightBlue mb-[5px] transition-all duration-200 ease-in-out">
           ورود
@@ -202,7 +189,6 @@ const LoginForm = () => {
             pattern={patterns.email}
             value={formValues.email}
             handleChange={handleChange}
-            handleFocus={handleFocus}
             error={formErrors.email}
             correct={formCorrects.email}
           ></Input1>
@@ -217,7 +203,6 @@ const LoginForm = () => {
             pattern={patterns.password}
             value={formValues.password}
             handleChange={handleChange}
-            handleFocus={handleFocus}
             error={formErrors.password}
             correct={formCorrects.password}
           ></Input1>
@@ -240,7 +225,7 @@ const LoginForm = () => {
         <Button1 text={"ورود"} onClick={handleSubmit} />
         <div className="flex flex-row justify-center text-sm text-gray-500 dark:text-gray-400 mt-2 mb-6">
           <h2>هنوز ثبت نام نکردی؟</h2>
-          <Link1 text={"ثبت نام"} route={"/signup"} />
+          <Link2 text={"ثبت نام"} value={true} />
         </div>
         <div className="flex flex-row ">
           <ModeToggle />

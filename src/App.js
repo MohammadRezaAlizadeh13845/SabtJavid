@@ -1,8 +1,8 @@
 import "./styles/App.css";
-import LoginForm from "./components/LoginForm";
-import Logo from "./components/Logo";
 import { Route, Routes } from "react-router-dom";
-import SignUpForm from "./components/SignUpForm";
+import PagesMenu from "./components/PagesMenu";
+import Home from "./pages/Home";
+import Initial from "./pages/Initial";
 
 function App() {
   const localHost =
@@ -13,12 +13,11 @@ function App() {
     : "http://192.168.1.103:5000";
   return (
     <div className="flex flex-col justify-center min-h-screen">
-      <div className="flex flex-row justify-center mb-5 ">
-        <Logo width={"150px"} height={"75px"} />
-      </div>
       <Routes>
-        <Route path="/" element={<LoginForm />} />
-        <Route path="/signup" element={<SignUpForm />} />
+        <Route path="/" element={<PagesMenu />} />
+        <Route path="/initial" element={<Initial />} />
+        <Route path="/signup" element={<Initial />} />
+        <Route path="/home" element={<Home />} />
       </Routes>
     </div>
   );

@@ -1,7 +1,6 @@
 import DarkLogo from "../assets/images/favicon-dark1.svg";
 import LightLogo from "../assets/images/favicon-light1.svg";
 import { useEffect, useState } from "react";
-import ModeToggle from "../components/ModeToggle";
 
 const Logo = ({ width, height }) => {
   const [isDarkMode, setIsDarkMode] = useState(
@@ -18,7 +17,7 @@ const Logo = ({ width, height }) => {
     return () => observer.disconnect();
   }, []);
   return (
-    <div className={`relative w-[${width}] h-[${height}] `}>
+    <div style={{ width, height, position: "relative" }}>
       <img
         src={LightLogo}
         alt="Light Logo"

@@ -6,15 +6,17 @@ module.exports = {
     "./public/**/*.{html,js}",
     "./test/**/*.{js,jsx,ts,tsx,html}",
   ],
-  screens: {
-    supsm: "320px",
-    sm: "480px",
-    md: "768px",
-    lg: "976px",
-    xl: "1440px",
-  },
   theme: {
     extend: {
+      screens: {
+        supsm: "320px",
+        sm: "480px",
+        md: "768px",
+        upmd: "900px",
+        lg: "976px",
+        uplg: "1084px",
+        xl: "1440px",
+      },
       fontFamily: {
         vazir: ["Vazirmatn", "sans-serif"],
         playpen: ["Playpen", "sans-serif"],

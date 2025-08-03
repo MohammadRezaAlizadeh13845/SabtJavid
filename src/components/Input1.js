@@ -10,6 +10,8 @@ const Input1 = ({
   handleBlur,
   error,
   correct,
+  isDarkMode,
+  isHovered,
 }) => {
   return (
     <div>
@@ -22,13 +24,24 @@ const Input1 = ({
         onChange={handleChange}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className={` border border-transparent transition-all duration-200 ease-in-out bg-gray-100 rounded-full px-5 py-2 text-[15px] mb-[1px] text-right dark:bg-slate-900 dark:text-white ${
-          error
-            ? "border-red-700 dark:border-red-400"
+        className={`
+    border transition-all duration-200 ease-in-out bg-gray-100 rounded-full 
+    px-5 py-2 text-[15px] mb-[1px] text-right dark:bg-slate-900 dark:text-white 
+    hover:border-gray-400
+  `}
+        style={{
+          borderColor: error
+            ? isDarkMode
+              ? "#E53935"
+              : "#EF5350"
             : correct && form === "signup"
-            ? "border-green-600 dark:border-green-400"
-            : "border-transparent hover:border-gray-400"
-        }`}
+            ? isDarkMode
+              ? "#43A047"
+              : "#66BB6A"
+            : isHovered
+            ? "#9CA3AF"
+            : "transparent",
+        }}
       />
     </div>
   );

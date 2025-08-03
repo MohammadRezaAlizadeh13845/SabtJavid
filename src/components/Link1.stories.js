@@ -1,4 +1,3 @@
-import { MemoryRouter } from "react-router-dom";
 import Link1 from "./Link1";
 
 export default {
@@ -6,4 +5,8 @@ export default {
   component: Link1,
 };
 
-export const Form1 = () => <Link1 />;
+export const Form1 = (args) => <Link1 {...args} />;
+
+Form1.args = {
+  size: "2xl",
+};
