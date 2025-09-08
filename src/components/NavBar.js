@@ -1,5 +1,5 @@
 import Link3 from "./Link3";
-import Logo from "./Logo";
+import Logo1 from "./Logo1";
 import Button2 from "./Button2";
 import ModeToggle from "./ModeToggle";
 import ModeText from "./ModeText";
@@ -10,7 +10,7 @@ const NavBar = () => {
   return (
     <div className="flex flex-row items-center w-full relative ">
       <div className="uplg:mr-5 mx-auto uplg:mx-0 translate-x-[35px] uplg:translate-x-0">
-        <Logo width={"150px"} height={"75px"} />
+        <Logo1 width={"150px"} height={"75px"} />
       </div>
       <div className="flex flex-row space-x-6 mr-5 hidden uplg:flex">
         <div className="ml-6">

@@ -5,7 +5,7 @@ import Input1 from "./Input1";
 import ErrorMessage from "./ErrorMessage";
 import ModeToggle from "./ModeToggle";
 import Link2 from "./Link2";
-import Logo from "./Logo";
+import Logo1 from "./Logo1";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -171,7 +171,7 @@ const LoginForm = () => {
   return (
     <div>
       <div className="flex flex-row justify-center mb-3">
-        <Logo width={"150px"} height={"75px"} />
+        <Logo1 width={"150px"} height={"75px"} />
       </div>
       <form className="flex flex-col justify-center items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black w-full max-w-md text-right transition-all duration-200 ease-in-out mx-auto my-auto">
         <h1 className="text-3xl text-darkBlue dark:text-lightBlue mb-[5px] transition-all duration-200 ease-in-out">

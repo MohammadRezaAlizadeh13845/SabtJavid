@@ -9,7 +9,7 @@ import persian_fa from "react-date-object/locales/persian_fa";
 import Select from "react-select";
 import { components } from "react-select";
 import ModeToggle from "./ModeToggle";
-import Logo from "./Logo";
+import Logo1 from "./Logo1";
 import ModeText from "./ModeText";
 import Link2 from "./Link2";
 
@@ -358,7 +358,7 @@ const SignUpForm = () => {
   return (
     <div>
       <div className="flex flex-row justify-center mb-3">
-        <Logo width={"150px"} height={"75px"} />
+        <Logo1 width={"150px"} height={"75px"} />
       </div>
       <form className="flex flex-col justify-center items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black w-full max-w-md md:max-w-lg text-right transition-all duration-200 ease-in-out mx-auto mb-5">
         <h1 className="text-3xl text-darkBlue dark:text-lightBlue mb-[5px] transition-all duration-200 ease-in-out">
