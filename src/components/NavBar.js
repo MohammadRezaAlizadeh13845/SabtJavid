@@ -5,10 +5,26 @@ import ModeToggle from "./ModeToggle";
 import ModeText from "./ModeText";
 import BurgerMenuIcon from "./BurgerMenuIcon";
 import BurgerMenu from "./BurgerMenu";
+import { useEffect, useRef } from "react";
+import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 
 const NavBar = () => {
+  const menuRef = useRef(null);
+  const { open, setOpen } = useBurgerMenuContext();
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (menuRef.current && !menuRef.current.contains(event.target)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
   return (
-    <div className="flex flex-row items-center w-full relative ">
+    <div className="flex flex-row items-center w-full relative">
       <div className="uplg:mr-5 mx-auto uplg:mx-0 translate-x-[35px] uplg:translate-x-0">
         <Logo1 width={"150px"} height={"75px"} />
       </div>
@@ -20,9 +36,9 @@ const NavBar = () => {
         <Link3 text="مجله سلامت" size={"20px"} />
         <Link3 text="درباره ما" size={"20px"} />
       </div>
-      <div className="absolute flex uplg:hidden top-3 right-3">
+      <div ref={menuRef} className="absolute flex uplg:hidden top-3 right-3">
         <BurgerMenuIcon />
-        <div className="absolute top-[50px]">
+        <div className="absolute top-[50px] z-[999]">
           <BurgerMenu />
         </div>
       </div>

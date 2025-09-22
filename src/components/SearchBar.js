@@ -2,13 +2,8 @@ import { useState, useEffect } from "react";
 import LightSearch from "../assets/images/search-light.svg";
 import DarkSearch from "../assets/images/search-dark.svg";
 import HoverSearch from "../assets/images/search-hover.svg";
-import Logo2 from "./Logo2";
 
 const SearchBar = () => {
-  const [open, setOpen] = useState(false);
-
-  const [searched, setSearched] = useState(false);
-
   const [isDarkMode, setIsDarkMode] = useState(
     document.body.classList.contains("dark")
   );
@@ -27,15 +22,20 @@ const SearchBar = () => {
   return (
     <div>
       <div
-        className={`relative flex flex-row justify-center items-start bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black max-w-md md:max-w-[60%] text-right transition-all duration-200 ease-in-out mx-auto mb-1 border-2 border-[#b7bcc5] hover:border-gray-500 h-[50px] ${
+        id="searchbar"
+        className={`mt-5 relative flex flex-row justify-center items-start bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black max-w-[80%] md:max-w-[60%] text-right transition-all duration-200 ease-in-out mx-auto mb-2 border-2 border-[#b7bcc5] hover:border-gray-500 h-[50px] ${
           isFocused ? "border-gray-500" : "border-[#b7bcc5]"
         }`}
       >
-        <div>
+        <div id="search button">
           <button
             type="submit"
             onClick={null}
-            style={{ width: "40px", height: "40px", position: "absolute" }}
+            style={{
+              width: "35px",
+              height: "40px",
+              position: "absolute",
+            }}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             className="left-3 top-1"
@@ -63,20 +63,26 @@ const SearchBar = () => {
             />
           </button>
         </div>
-        <div className="absolute top-2 right-5">
+        <div id="input" className="absolute top-2 right-5 w-[75%]">
           <input
             onFocus={() => setIsFocused(true)}
             onBlur={() => setIsFocused(false)}
-            className="dark:bg-slate-800 text-xl placeholder-gray-500 placeholder:text-[18px] w-[250px] transition-all duration-200 md:w-[350px] focus:outline-none focus:ring-0"
+            className="w-full border-none outline-none ring-0 dark:bg-slate-800 text-xl placeholder-gray-500 placeholder:text-[18px] transition-all duration-200 focus:outline-none focus:ring-0 focus:shadow-none dark:caret-white"
             placeholder="جست و جو"
           ></input>
         </div>
       </div>
+
       <div
-        className={` flex flex-col justify-center items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black  max-w-md md:max-w-[60%] text-right transition-all duration-200 ease-in-out mx-auto mb-5 opacity-100 ${
-          searched ? "opacity-100" : "opacity-0"
-        }`}
-      ></div>
+        id="resultsbar"
+        className={`opacity-0 flex flex-col justify-center items-center bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black max-w-[80%] md:max-w-[60%] text-right transition-all duration-200 ease-in-out mx-auto mb-5 ${
+          isFocused ? "opacity-100" : "opacity-0"
+        } `}
+      >
+        <button className="w-full bg-black hover:bg-red-500 text-white">
+          hello
+        </button>
+      </div>
     </div>
   );
 };

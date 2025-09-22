@@ -7,8 +7,6 @@ import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 const BurgerMenu = ({ width = "40px", height = "35px" }) => {
   const { open, setOpen } = useBurgerMenuContext();
 
-  const [openState, setOpenState] = useState(false);
-
   const firstRun = useRef(true);
 
   useEffect(() => {
@@ -16,14 +14,14 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
       firstRun.current = false;
       return;
     }
-    if (openState) {
+    if (open) {
       setClosed(() => ({ moved: false, rotated: false }));
       setOpened(() => ({ rotated: false, moved: true }));
     } else {
       setOpened(() => ({ rotated: false, moved: false }));
       setClosed(() => ({ moved: false, rotated: true }));
     }
-  }, [openState]);
+  }, [open]);
 
   const [opened, setOpened] = useState({
     moved: false,
@@ -86,7 +84,6 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
       onMouseLeave={() => setIsHovered(false)}
       className="relative "
       onClick={() => {
-        setOpenState(!openState);
         setOpen(!open);
       }}
     >

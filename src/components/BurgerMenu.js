@@ -2,15 +2,26 @@ import Link3 from "./Link3";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 import ModeToggle from "./ModeToggle";
 import ModeText from "./ModeText";
+import { useEffect, useState } from "react";
 const BurgerMenu = ({ width = "350px", height = "450px" }) => {
   const { open } = useBurgerMenuContext();
+  const [hidden, setHidden] = useState(!open);
+  useEffect(() => {
+    if (open) {
+      setHidden(false);
+    } else {
+      const timer = setTimeout(() => setHidden(true), 200);
+      return () => clearTimeout(timer);
+    }
+  }, [open]);
+
   return (
     <div>
       <div
         style={{ width, height }}
         className={`flex flex-col justify-center items-start bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-2xl dark:shadow-black  max-w-md md:max-w-lg text-right transition-all duration-200 ease-in-out mx-auto mb-5 opacity-0 ${
-          open ? "opacity-100" : "opacity-0"
-        }`}
+          open ? "opacity-100" : "opacity-0 "
+        } ${hidden ? "hidden" : "block"}`}
       >
         <Link3 text="مشاوره روانشناسی" size={"20px"} />
 
