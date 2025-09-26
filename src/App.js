@@ -17,12 +17,13 @@ function App() {
     ? "http://localhost:5000"
     : "http://192.168.1.103:5000";
   return (
-    <div className="min-h-screen">
-      <header className="w-full">
-        <NavBar />
-        <SearchBar />
-      </header>
-      <BrowserRouter basename="/SabtJavid/">
+    <BrowserRouter basename="/SabtJavid">
+      <div className="min-h-screen">
+        <header className="w-full">
+          <NavBar />
+          <SearchBar />
+        </header>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<ArticlePage />} />
@@ -30,11 +31,11 @@ function App() {
           <Route path="/aboutus" element={<AboutUs />} />
           <Route path="/contactus" element={<ContactUs />} />
         </Routes>
-      </BrowserRouter>
-      <footer>
-        <Footer />
-      </footer>
-    </div>
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 
