@@ -21,7 +21,7 @@ const BurgerMenu = ({ width = "300px", height = "450px" }) => {
     setOpen(false);
   };
   const homeClick = () => {
-    navigator("/");
+    navigator("/SabtJavid/");
     setOpen(false);
   };
   const servicesClick = () => {

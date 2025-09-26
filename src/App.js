@@ -18,7 +18,7 @@ function App() {
       </header>
 
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/SabtJavid/" element={<Home />} />
         <Route path="/article/:id" element={<ArticlePage />} />
         <Route path="/articles" element={<ArticlesPage />} />
         <Route path="/aboutus" element={<AboutUs />} />

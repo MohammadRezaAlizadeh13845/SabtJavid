@@ -9,7 +9,7 @@ const Footer = () => {
     navigator("/articles");
   };
   const homeClick = () => {
-    navigator("/");
+    navigator("/SabtJavid/");
   };
   const servicesClick = () => {
     alert("این بخش در حال تکمیل است.");
