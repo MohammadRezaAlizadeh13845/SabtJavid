@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ArticlePage from "./pages/ArticlePage";
 import NavBar from "./components/NavBar";
@@ -10,14 +10,8 @@ import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 
 function App() {
-  const localHost =
-    window.location.hostname === "localhost" ||
-    window.location.hostname === "127.0.0.1";
-  const BaseURL = localHost
-    ? "http://localhost:5000"
-    : "http://192.168.1.103:5000";
   return (
-    <BrowserRouter basename="/SabtJavid">
+    <HashRouter basename="/SabtJavid">
       <div className="min-h-screen">
         <header className="w-full">
           <NavBar />
@@ -35,7 +29,7 @@ function App() {
           <Footer />
         </footer>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
