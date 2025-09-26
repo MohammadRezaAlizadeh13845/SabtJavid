@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ArticlePage from "./pages/ArticlePage";
 import NavBar from "./components/NavBar";
@@ -22,13 +22,15 @@ function App() {
         <NavBar />
         <SearchBar />
       </header>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/article/:id" element={<ArticlePage />} />
-        <Route path="/articles" element={<ArticlesPage />} />
-        <Route path="/aboutus" element={<AboutUs />} />
-        <Route path="/contactus" element={<ContactUs />} />
-      </Routes>
+      <BrowserRouter basename="/SabtJavid">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/article/:id" element={<ArticlePage />} />
+          <Route path="/articles" element={<ArticlesPage />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
+        </Routes>
+      </BrowserRouter>
       <footer>
         <Footer />
       </footer>
