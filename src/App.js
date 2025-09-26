@@ -22,7 +22,7 @@ function App() {
         <NavBar />
         <SearchBar />
       </header>
-      <BrowserRouter basename="/SabtJavid">
+      <BrowserRouter basename="/SabtJavid/">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/article/:id" element={<ArticlePage />} />
