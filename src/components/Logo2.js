@@ -1,6 +1,6 @@
-import DarkLogo from "../assets/images/favicon-dark1.svg";
-import LightLogo from "../assets/images/favicon-light1.svg";
-import HoverLogo from "../assets/images/favicon-hover1.svg";
+import DarkLogo from "../assets/images/icons/favicon-dark1.svg";
+import LightLogo from "../assets/images/icons/favicon-light1.svg";
+import HoverLogo from "../assets/images/icons/favicon-hover1.svg";
 import { useEffect, useState } from "react";
 //this one has hovering effect
 

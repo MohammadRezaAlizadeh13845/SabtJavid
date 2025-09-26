@@ -1,10 +1,9 @@
 import Link3 from "./Link3";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
-import ModeToggle from "./ModeToggle";
-import ModeText from "./ModeText";
 import { useEffect, useState } from "react";
-const BurgerMenu = ({ width = "350px", height = "450px" }) => {
-  const { open } = useBurgerMenuContext();
+import { useNavigate } from "react-router-dom";
+const BurgerMenu = ({ width = "300px", height = "450px" }) => {
+  const { open, setOpen } = useBurgerMenuContext();
   const [hidden, setHidden] = useState(!open);
   useEffect(() => {
     if (open) {
@@ -15,6 +14,28 @@ const BurgerMenu = ({ width = "350px", height = "450px" }) => {
     }
   }, [open]);
 
+  const navigator = useNavigate();
+
+  const articlesClick = () => {
+    navigator("/articles");
+    setOpen(false);
+  };
+  const homeClick = () => {
+    navigator("/");
+    setOpen(false);
+  };
+  const servicesClick = () => {
+    alert("این بخش در حال تکمیل است.");
+  };
+  const aboutUsClick = () => {
+    navigator("/aboutus");
+    setOpen(false);
+  };
+  const contactUsClick = () => {
+    navigator("/contactus");
+    setOpen(false);
+  };
+
   return (
     <div>
       <div
@@ -23,20 +44,16 @@ const BurgerMenu = ({ width = "350px", height = "450px" }) => {
           open ? "opacity-100" : "opacity-0 "
         } ${hidden ? "hidden" : "block"}`}
       >
-        <Link3 text="مشاوره روانشناسی" size={"20px"} />
+        <Link3 text="صفحه اصلی" size={"20px"} onClick={homeClick} />
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
 
-        <div className="bg-gradient-to-r from-blue-400 to-indigo-700 rounded-2xl h-[5px] w-full mt-5 mb-5 dark:to-indigo-500 opacity-50"></div>
-
-        <Link3 text="مشاوره روانپزشکی" size={"20px"} />
-        <div className="bg-gradient-to-r from-blue-400 to-indigo-700 rounded-2xl h-[5px] w-full mt-5 mb-5 dark:to-indigo-500 opacity-50"></div>
-        <Link3 text="مجله سلامت" size={"20px"} />
-        <div className="bg-gradient-to-r from-blue-400 to-indigo-700 rounded-2xl h-[5px] w-full mt-5 mb-5 dark:to-indigo-500 opacity-50"></div>
-        <Link3 text="درباره ما" size={"20px"} />
-        <div className="bg-gradient-to-r from-blue-400 to-indigo-700 rounded-2xl h-[5px] w-full mt-5 mb-5 dark:to-indigo-500 opacity-50"></div>
-        <div className="flex flex-row">
-          <ModeToggle />
-          <ModeText />
-        </div>
+        <Link3 text="خدمات" size={"20px"} onClick={servicesClick} />
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
+        <Link3 text="مقالات" size={"20px"} onClick={articlesClick} />
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
+        <Link3 text="درباره ما" size={"20px"} onClick={aboutUsClick} />
+        <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
+        <Link3 text="تماس با ما" size={"20px"} onClick={contactUsClick} />
       </div>
     </div>
   );

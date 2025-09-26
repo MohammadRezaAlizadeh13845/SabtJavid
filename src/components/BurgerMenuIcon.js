@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import BurgerHover from "../assets/images/burger-hover.svg";
-import BurgerLight from "../assets/images/burger-light.svg";
-import BurgerDark from "../assets/images/burger-dark.svg";
+import BurgerHover from "../assets/images/icons/burger-hover.svg";
+import BurgerLight from "../assets/images/icons/burger-light.svg";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 
 const BurgerMenu = ({ width = "40px", height = "35px" }) => {
@@ -61,21 +60,6 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
     }
   }, [closed.rotated]);
 
-  const [isDarkMode, setIsDarkMode] = useState(
-    document.body.classList.contains("dark")
-  );
-
-  useEffect(() => {
-    const observer = new MutationObserver(() => {
-      setIsDarkMode(document.body.classList.contains("dark"));
-    });
-    observer.observe(document.body, {
-      attributes: true,
-      attributeFilter: ["class"],
-    });
-    return () => observer.disconnect();
-  }, []);
-
   const [isHovered, setIsHovered] = useState(false);
 
   return (
@@ -101,14 +85,7 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
           src={BurgerLight}
           alt="navbar"
           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        <img
-          src={BurgerDark}
-          alt="navbar"
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-100" : "opacity-0"
+            isHovered ? "opacity-0" : "opacity-100"
           }`}
         />
         <img
@@ -130,16 +107,10 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
           src={BurgerLight}
           alt="navbar"
           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-0" : "opacity-100"
+            isHovered ? "opacity-0" : "opacity-100"
           }`}
         />
-        <img
-          src={BurgerDark}
-          alt="navbar"
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-100" : "opacity-0"
-          }`}
-        />
+
         <img
           src={BurgerHover}
           alt="navbar"
@@ -162,14 +133,7 @@ const BurgerMenu = ({ width = "40px", height = "35px" }) => {
           src={BurgerLight}
           alt="navbar"
           className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-0" : "opacity-100"
-          }`}
-        />
-        <img
-          src={BurgerDark}
-          alt="navbar"
-          className={`absolute inset-0 w-full h-full object-contain transition-opacity duration-200 ${
-            isDarkMode && !isHovered ? "opacity-100" : "opacity-0"
+            isHovered ? "opacity-0" : "opacity-100"
           }`}
         />
         <img

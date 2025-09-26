@@ -1,8 +1,13 @@
 import "./styles/App.css";
 import { Route, Routes } from "react-router-dom";
-import PagesMenu from "./components/PagesMenu";
 import Home from "./pages/Home";
-import Initial from "./pages/Initial";
+import ArticlePage from "./pages/ArticlePage";
+import NavBar from "./components/NavBar";
+import SearchBar from "./components/SearchBar";
+import ArticlesPage from "./pages/ArticlesPage";
+import AboutUs from "./pages/AboutUs";
+import ContactUs from "./pages/ContactUs";
+import Footer from "./components/Footer";
 
 function App() {
   const localHost =
@@ -12,13 +17,21 @@ function App() {
     ? "http://localhost:5000"
     : "http://192.168.1.103:5000";
   return (
-    <div className="flex flex-col justify-center min-h-screen">
+    <div className="min-h-screen">
+      <header className="w-full">
+        <NavBar />
+        <SearchBar />
+      </header>
       <Routes>
-        <Route path="/" element={<PagesMenu />} />
-        <Route path="/initial" element={<Initial />} />
-        <Route path="/signup" element={<Initial />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/article/:id" element={<ArticlePage />} />
+        <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
       </Routes>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

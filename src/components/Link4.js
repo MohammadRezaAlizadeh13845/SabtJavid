@@ -1,5 +1,5 @@
 import { useState } from "react";
-const Link3 = ({
+const Link4 = ({
   text = "سلام",
   size = "30px",
   onClick,
@@ -11,7 +11,7 @@ const Link3 = ({
       <button
         style={{ fontSize: size }}
         href="./"
-        className={`text-darkBlue hover:text-cherryRed transition-all duration-200  cursor-pointer whitespace-nowrap`}
+        className={`text-white hover:text-cherryRed transition-all duration-200  cursor-pointer whitespace-nowrap`}
         onMouseEnter={() => {
           setIsHovered(true);
         }}
@@ -32,4 +32,4 @@ const Link3 = ({
   );
 };
 
-export default Link3;
+export default Link4;

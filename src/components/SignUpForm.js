@@ -13,13 +13,13 @@ import Logo1 from "./Logo1";
 import ModeText from "./ModeText";
 import Link2 from "./Link2";
 
-import AlborzLogo from "../assets/images/Preview22.svg";
-import IranLogo from "../assets/images/لوگو-بیمه-ایران.svg";
-import TaminLogo from "../assets/images/tamin.svg";
-import RaziLogo from "../assets/images/Untitled55.svg";
-import MaleLogo from "../assets/images/man1.svg";
-import FemaleLogo from "../assets/images/woman1.svg";
-import CloseLogo from "../assets/images/close2.svg";
+import AlborzLogo from "../assets/images/icons/Preview22.svg";
+import IranLogo from "../assets/images/icons/لوگو-بیمه-ایران.svg";
+import TaminLogo from "../assets/images/icons/tamin.svg";
+import RaziLogo from "../assets/images/icons/Untitled55.svg";
+import MaleLogo from "../assets/images/icons/man1.svg";
+import FemaleLogo from "../assets/images/icons/woman1.svg";
+import CloseLogo from "../assets/images/icons/close2.svg";
 
 const insuranceOptions = [
   {

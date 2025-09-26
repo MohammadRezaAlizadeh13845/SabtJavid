@@ -11,6 +11,7 @@ module.exports = {
       screens: {
         supsm: "320px",
         sm: "480px",
+        upsm: "560px",
         md: "768px",
         upmd: "900px",
         lg: "976px",
@@ -27,6 +28,7 @@ module.exports = {
         veryDarkGray: "hsl(222, 47%, 10%)",
         darkGray: "hsl(217, 33%, 17%)",
         lightGray: "hsl(214, 32%, 85%)",
+        cherryRed: "rgba(154, 14, 14, 1)",
       },
     },
   },
