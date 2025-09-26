@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import { HashRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import ArticlePage from "./pages/ArticlePage";
 import NavBar from "./components/NavBar";
@@ -11,25 +11,23 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <HashRouter basename="/SabtJavid">
-      <div className="min-h-screen">
-        <header className="w-full">
-          <NavBar />
-          <SearchBar />
-        </header>
+    <div className="min-h-screen">
+      <header className="w-full">
+        <NavBar />
+        <SearchBar />
+      </header>
 
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/article/:id" element={<ArticlePage />} />
-          <Route path="/articles" element={<ArticlesPage />} />
-          <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/contactus" element={<ContactUs />} />
-        </Routes>
-        <footer>
-          <Footer />
-        </footer>
-      </div>
-    </HashRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/article/:id" element={<ArticlePage />} />
+        <Route path="/articles" element={<ArticlesPage />} />
+        <Route path="/aboutus" element={<AboutUs />} />
+        <Route path="/contactus" element={<ContactUs />} />
+      </Routes>
+      <footer>
+        <Footer />
+      </footer>
+    </div>
   );
 }
 
