@@ -7,8 +7,8 @@ const ContactUs = () => {
           بدون تردید برای دریافت هرگونه اطلاعاتی با ما تماس بگیرید .
         </h1>
         <div className="w-fit mt-10 flex flex-row text-[20px]">
-          <div className="whitespace-nowrap">دفتر ایران خط ویژه:&nbsp;</div>
-          <Link4 text="02188881425" size="20px" />
+          <div className="whitespace-nowrap">مدیریت:&nbsp;</div>
+          <Link4 text="09128735034" size="20px" />
         </div>
         <div className="w-fit mt-10 text-[20px] flex flex-row">
           <div className="whitespace-nowrap">دفتر ایران خط ویژه:&nbsp;</div>
