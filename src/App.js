@@ -8,6 +8,7 @@ import ArticlesPage from "./pages/ArticlesPage";
 import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <NavBar />
         <SearchBar />
       </header>
-
+      <ScrollToTop />
       <Routes>
         <Route path="/SabtJavid/" element={<Home />} />
         <Route path="/article/:id" element={<ArticlePage />} />
