@@ -8,7 +8,7 @@ const Home = () => {
   return (
     <div className="flex flex-col">
       <div
-        className="mr-10 mt-10 max-w-[80%] h-[360px] md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] overflow-y-auto"
+        className="mr-10 mt-10 max-w-[80%] h-fit bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] "
         style={{ backgroundImage: `url(${img4})` }}
       >
         <div className=" flex flex-col w-full justify-center items-center max-w-[80%] upmd:w-[60%] mx-auto">
@@ -51,7 +51,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="overflow-y-auto mt-10 w-[80%] h-[360px] md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] self-end ml-10"
+        className=" mt-10 w-[80%] h-fit md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] self-end ml-10"
         style={{ backgroundImage: `url(${img5})` }}
       >
         <div className=" flex flex-col w-full justify-center items-center max-w-[80%] upmd:w-[60%] mx-auto">
@@ -94,7 +94,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="overflow-y-auto mr-10 mt-10 w-[80%] h-[360px] md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px]"
+        className=" mr-10 mt-10 w-[80%] h-fit bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px]"
         style={{ backgroundImage: `url(${img6})` }}
       >
         <div className=" flex flex-col w-full justify-center items-center max-w-[80%] upmd:w-[60%] mx-auto">
@@ -137,7 +137,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="self-end overflow-y-auto ml-10 mt-10 w-[80%] h-[360px] md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px]"
+        className="self-end ml-10 mt-10 w-[80%] h-fit bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px]"
         style={{ backgroundImage: `url(${img7})` }}
       >
         <div className=" flex flex-col w-full justify-center items-center max-w-[80%] upmd:w-[60%] mx-auto">
@@ -180,7 +180,7 @@ const Home = () => {
         </div>
       </div>
       <div
-        className="overflow-y-auto mr-10 mt-10 w-[80%] h-[360px] md:h-[400px] bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] mb-10"
+        className="mr-10 mt-10 w-[80%] h-fit bg-cover bg-center bg-no-repeat flex-shrink-0 rounded-[15px] mb-10"
         style={{ backgroundImage: `url(${img8})` }}
       >
         <div className=" flex flex-col w-full justify-center items-center max-w-[80%] upmd:w-[60%] mx-auto">
