@@ -24,7 +24,7 @@ const Link3 = ({
       </button>
 
       <div
-        className={`bg-cherryRed rounded-2xl h-[3px] w-full mt-1 transition-all duration-200 opacity-0 mb-5 uplg:-mb-1 ${
+        className={`bg-cherryRed rounded-2xl h-[3px] w-full mt-1 transition-all duration-200 opacity-0 mb-5  ${
           isHovered ? "opacity-100" : "opacity-0"
         }`}
       ></div>

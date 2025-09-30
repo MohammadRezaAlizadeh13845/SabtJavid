@@ -3,13 +3,16 @@ import Logo1 from "./Logo1";
 import Button2 from "./Button2";
 import BurgerMenuIcon from "./BurgerMenuIcon";
 import BurgerMenu from "./BurgerMenu";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 import { useNavigate } from "react-router-dom";
+import ServicesMenu from "./ServicesMenu";
 
 const NavBar = () => {
   const menuRef = useRef(null);
   const { setOpen } = useBurgerMenuContext();
+
+  const [servicesMenu, setServicesMenu] = useState(false);
 
   useEffect(() => {
     function handleClickOutside(event) {
@@ -31,9 +34,6 @@ const NavBar = () => {
   const homeClick = () => {
     navigator("/SabtJavid/");
   };
-  const servicesClick = () => {
-    alert("این بخش در حال تکمیل است.");
-  };
   const aboutUsClick = () => {
     navigator("/aboutus");
   };
@@ -51,12 +51,16 @@ const NavBar = () => {
         <div className="ml-6">
           <Link3 text="صفحه اصلی" size={"20px"} onClick={homeClick} />
         </div>
-        <Link3 text="خدمات" size={"20px"} onClick={servicesClick} />
-
+        <div
+          className="h-[30px]"
+          onMouseEnter={() => setServicesMenu(true)}
+          onMouseLeave={() => setServicesMenu(false)}
+        >
+          <Link3 text="خدمات" size={"20px"} />
+          <ServicesMenu menuOpen={servicesMenu} setMenuOpen={setServicesMenu} />
+        </div>
         <Link3 text="مقالات" size={"20px"} onClick={articlesClick} />
-
         <Link3 text="درباره ما" size={"20px"} onClick={aboutUsClick} />
-
         <Link3 text="تماس با ما" size={"20px"} onClick={contactUsClick} />
       </div>
       <div ref={menuRef} className="absolute flex uplg:hidden top-10 right-3">

@@ -2,9 +2,14 @@ import Link3 from "./Link3";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import ServicesMenu from "./ServicesMenu";
 const BurgerMenu = ({ width = "300px", height = "450px" }) => {
   const { open, setOpen } = useBurgerMenuContext();
+
   const [hidden, setHidden] = useState(!open);
+
+  const [servicesMenu, setServicesMenu] = useState(false);
+
   useEffect(() => {
     if (open) {
       setHidden(false);
@@ -23,9 +28,6 @@ const BurgerMenu = ({ width = "300px", height = "450px" }) => {
   const homeClick = () => {
     navigator("/SabtJavid/");
     setOpen(false);
-  };
-  const servicesClick = () => {
-    alert("این بخش در حال تکمیل است.");
   };
   const aboutUsClick = () => {
     navigator("/aboutus");
@@ -47,7 +49,19 @@ const BurgerMenu = ({ width = "300px", height = "450px" }) => {
         <Link3 text="صفحه اصلی" size={"20px"} onClick={homeClick} />
         <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
 
-        <Link3 text="خدمات" size={"20px"} onClick={servicesClick} />
+        <div
+          className="h-[30px] mb-5"
+          onMouseEnter={() => setServicesMenu(true)}
+          onMouseLeave={() => setServicesMenu(false)}
+        >
+          <Link3 text="خدمات" size={"20px"} />
+          <ServicesMenu
+            menuOpen={servicesMenu}
+            setMenuOpen={setServicesMenu}
+            top="150px"
+            right="50px"
+          />
+        </div>
         <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>
         <Link3 text="مقالات" size={"20px"} onClick={articlesClick} />
         <div class="h-[2px] w-full bg-gradient-to-r from-transparent via-[#214EAE] to-transparent mb-5"></div>

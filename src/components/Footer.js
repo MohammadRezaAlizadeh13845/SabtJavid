@@ -1,8 +1,12 @@
 import Logo1 from "./Logo1";
 import Link3 from "./Link3";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import ServicesMenu from "./ServicesMenu";
 
 const Footer = () => {
+  const [servicesMenu, setServicesMenu] = useState(false);
+
   const navigator = useNavigate();
 
   const articlesClick = () => {
@@ -11,9 +15,7 @@ const Footer = () => {
   const homeClick = () => {
     navigator("/SabtJavid/");
   };
-  const servicesClick = () => {
-    alert("این بخش در حال تکمیل است.");
-  };
+
   const aboutUsClick = () => {
     navigator("/aboutus");
   };
@@ -34,7 +36,7 @@ const Footer = () => {
           className="text-darkBlue flex flex-col mt-5 text-[17px] upsm:text-[20px]"
         >
           <div>
-            دفتر ایران : تهران - ونک - خیابان صانعی - ساختمان صدف - واحد31
+            دفتر ایران : تهران - میدان شیخ بهایی - کوچه مسعود - ساختمان بهار
           </div>
           <div className="mt-5 mb-5"> خط ویژه : 02188883150</div>
         </div>
@@ -45,22 +47,34 @@ const Footer = () => {
       >
         <div className="flex flex-col">
           {" "}
-          <div className="w-fit uplg:mb-5">
+          <div className="w-fit uplg:-mb-1">
             <Link3 text="صفحه اصلی" size={"20px"} onClick={homeClick} />
           </div>
-          <div className="w-fit uplg:mb-5">
+          <div className="w-fit uplg:-mb-1">
             {" "}
-            <Link3 text="خدمات" size={"20px"} onClick={servicesClick} />
+            <div
+              className="h-[30px] mb-5 relative"
+              onMouseEnter={() => setServicesMenu(true)}
+              onMouseLeave={() => setServicesMenu(false)}
+            >
+              <Link3 text="خدمات" size={"20px"} />
+              <ServicesMenu
+                menuOpen={servicesMenu}
+                setMenuOpen={setServicesMenu}
+                top="-120px"
+                right="-300px"
+              />
+            </div>
           </div>
-          <div className="w-fit uplg:mb-5">
+          <div className="w-fit uplg:-mb-1">
             <Link3 text="مقالات" size={"20px"} onClick={articlesClick} />
           </div>
         </div>
         <div className="flex flex-col mr-5 uplg:mr-0">
-          <div className="w-fit uplg:mb-5">
+          <div className="w-fit uplg:-mb-1">
             <Link3 text="تماس با ما" size={"20px"} onClick={contactUsClick} />
           </div>
-          <div className="w-fit uplg:mb-5">
+          <div className="w-fit uplg:-mb-1">
             <Link3 text="درباره ما" size={"20px"} onClick={aboutUsClick} />
           </div>
         </div>
