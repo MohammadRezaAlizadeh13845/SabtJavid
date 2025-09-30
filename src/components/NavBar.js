@@ -55,6 +55,8 @@ const NavBar = () => {
           className="h-[30px]"
           onMouseEnter={() => setServicesMenu(true)}
           onMouseLeave={() => setServicesMenu(false)}
+          onClick={() => setServicesMenu(true)}
+          onBlur={() => setServicesMenu(false)}
         >
           <Link3 text="خدمات" size={"20px"} />
           <ServicesMenu menuOpen={servicesMenu} setMenuOpen={setServicesMenu} />

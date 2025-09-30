@@ -56,6 +56,8 @@ const Footer = () => {
               className="h-[30px] mb-5 relative"
               onMouseEnter={() => setServicesMenu(true)}
               onMouseLeave={() => setServicesMenu(false)}
+              onClick={() => setServicesMenu(true)}
+              onBlur={() => setServicesMenu(false)}
             >
               <Link3 text="خدمات" size={"20px"} />
               <ServicesMenu
