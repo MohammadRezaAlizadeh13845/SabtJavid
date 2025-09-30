@@ -5,6 +5,20 @@ import { useState } from "react";
 import ServicesMenu from "./ServicesMenu";
 
 const Footer = () => {
+  var top = "-120px";
+
+  var right = "-300px";
+
+  const mediaQuery = window.matchMedia("(min-width:560px)");
+
+  function updateString(e) {
+    top = e.matches ? "-120px" : "-350px";
+    right = e.matches ? "-300px" : "-50px";
+  }
+
+  updateString(mediaQuery);
+  mediaQuery.addEventListener("change", updateString);
+
   const [servicesMenu, setServicesMenu] = useState(false);
 
   const navigator = useNavigate();
@@ -63,8 +77,8 @@ const Footer = () => {
               <ServicesMenu
                 menuOpen={servicesMenu}
                 setMenuOpen={setServicesMenu}
-                top="-120px"
-                right="-300px"
+                top={top}
+                right={right}
               />
             </div>
           </div>

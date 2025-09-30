@@ -63,7 +63,7 @@ const ServicesMenu = ({
   return (
     <div
       style={{ top: top, right: right }}
-      className=" absolute z-[10] realtive group"
+      className=" absolute z-[10] realtive group h-[350px]"
     >
       <div
         ref={menuRef}
