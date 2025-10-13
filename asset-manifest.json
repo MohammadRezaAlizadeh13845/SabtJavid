@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SabtJavid/static/css/main.eaf0edb8.css",
-    "main.js": "/SabtJavid/static/js/main.2ccdda0f.js",
+    "main.js": "/SabtJavid/static/js/main.938aff83.js",
     "static/media/PlaypenSansArabic-Regular.ttf": "/SabtJavid/static/media/PlaypenSansArabic-Regular.fc8c18839bfdba38de2a.ttf",
     "static/media/img6.jpg": "/SabtJavid/static/media/img6.b3130bd790a982b41fcf.jpg",
     "static/media/4.jpg": "/SabtJavid/static/media/4.79ef7f7448287f6725fb.jpg",
@@ -71,10 +71,10 @@
     "static/media/send.svg": "/SabtJavid/static/media/send.fad3410b68e10548c61476e72777f02b.svg",
     "index.html": "/SabtJavid/index.html",
     "main.eaf0edb8.css.map": "/SabtJavid/static/css/main.eaf0edb8.css.map",
-    "main.2ccdda0f.js.map": "/SabtJavid/static/js/main.2ccdda0f.js.map"
+    "main.938aff83.js.map": "/SabtJavid/static/js/main.938aff83.js.map"
   },
   "entrypoints": [
     "static/css/main.eaf0edb8.css",
-    "static/js/main.2ccdda0f.js"
+    "static/js/main.938aff83.js"
   ]
 }
