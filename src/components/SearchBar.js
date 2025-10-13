@@ -130,7 +130,7 @@ const SearchBar = () => {
                 }
               }}
               onFocus={() => setIsFocused(true)}
-              className="w-full border-none outline-none ring-0 dark:bg-slate-800 text-xl placeholder-gray-500 placeholder:text-[18px] transition-all duration-200 focus:outline-none focus:ring-0 focus:shadow-none dark:caret-white text-black dark:text-white"
+              className="w-full border-none outline-none ring-0 text-xl placeholder-gray-500 placeholder:text-[18px] transition-all duration-200 focus:outline-none focus:ring-0 focus:shadow-none text-black  "
               placeholder="جست و جو"
             ></input>
           </div>

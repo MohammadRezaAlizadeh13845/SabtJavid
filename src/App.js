@@ -13,10 +13,18 @@ import AboutUs from "./pages/AboutUs";
 import ContactUs from "./pages/ContactUs";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import AskButton from "./components/AskButton";
+import ChatBox from "./components/ChatBox";
+import { useState } from "react";
 
 function App() {
+  const [showChat, setShowChat] = useState(false);
   return (
     <div className="min-h-screen">
+      <div id="chatbox">
+        <AskButton func={setShowChat} />
+        <ChatBox state={showChat} stateSetter={setShowChat} />
+      </div>
       <header className="w-full">
         <NavBar />
         <SearchBar />
@@ -33,7 +41,7 @@ function App() {
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<ContactUs />} />
       </Routes>
-      <footer>
+      <footer className="z-0">
         <Footer />
       </footer>
     </div>

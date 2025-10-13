@@ -2,6 +2,7 @@ import Link3 from "./Link3";
 import { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useBurgerMenuContext } from "../context/BurgerMenuContext";
+import CloseMenu from "./CloseMenu";
 const ServicesMenu = ({
   width = "300px",
   height = "350px",
@@ -26,7 +27,7 @@ const ServicesMenu = ({
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  });
+  }, []);
 
   useEffect(() => {
     if (menuOpen) {
@@ -65,6 +66,7 @@ const ServicesMenu = ({
       style={{ top: top, right: right }}
       className=" absolute z-[10] realtive group h-[350px]"
     >
+      <CloseMenu setOpen={setMenuOpen} />
       <div
         ref={menuRef}
         style={{ width, height }}

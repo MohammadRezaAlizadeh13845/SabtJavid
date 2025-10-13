@@ -37,7 +37,7 @@ const Footer = () => {
     navigator("/contactus");
   };
   return (
-    <div className="flex flex-col upsm:flex-row bg-white p-5">
+    <div className="flex flex-col upsm:flex-row bg-white p-5 z-[0]">
       <div
         id="logo-address-number"
         className="flex flex-col justify-center items-center upsm:p-5 "
@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
             دفتر ایران : تهران - میدان شیخ بهایی - کوچه مسعود - ساختمان بهار
           </div>
-          <div className="mt-5 mb-5"> خط ویژه : 02188883150</div>
+          <div className="mt-5 mb-5"> خط ویژه : 02188881425</div>
         </div>
       </div>
       <div
@@ -73,7 +73,9 @@ const Footer = () => {
               onClick={() => setServicesMenu(true)}
               onBlur={() => setServicesMenu(false)}
             >
-              <Link3 text="خدمات" size={"20px"} />
+              <div className="z-[-10]">
+                <Link3 text="خدمات" size={"20px"} />
+              </div>
               <ServicesMenu
                 menuOpen={servicesMenu}
                 setMenuOpen={setServicesMenu}
